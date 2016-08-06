@@ -1,0 +1,23 @@
+{
+	"extends": ["semistandard"],
+	"ecmaFeatures": {
+		"blockBindings": true,
+		"modules": true,
+	},
+	"env": {
+		"mocha": true
+	},
+	"globals": {
+        "describe": true,
+        "xdescribe": false,
+        "ddescribe": false,
+        "it": true,
+        "xit": false,
+        "iit": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "expect": false,
+        "pending": false,
+        "spyOn": false
+    }
+}
