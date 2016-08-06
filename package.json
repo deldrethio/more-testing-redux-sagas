@@ -43,17 +43,5 @@
       "babel-polyfill"
     ],
     "babel": "inherit"
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "globals": [
-      "describe",
-      "it",
-      "fetch",
-      "navigator",
-      "__DEV__",
-      "XMLHttpRequest",
-      "FormData"
-    ]
   }
 }
