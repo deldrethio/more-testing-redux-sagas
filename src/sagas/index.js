@@ -7,7 +7,7 @@ import Types from '../actions/types';
 
 import { getState } from '../reducers/selectors';
 
-export function * watchFetchUser () {
+export function * fetchUser () {
   const { auth } = yield select(getState);
 
   yield put(Actions.startActivity());
@@ -36,7 +36,7 @@ export function * watchLogin () {
     if (response.ok) {
       yield put(Actions.loginSuccess(response.data));
 
-      yield fork(watchFetchUser);
+      yield fork(fetchUser);
     } else {
       yield put(Actions.loginFailure(response.data));
     }

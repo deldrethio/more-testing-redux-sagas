@@ -3,7 +3,7 @@ import { take, select, put, call, fork } from 'redux-saga/effects';
 
 import {
   watchLogin,
-  watchFetchUser
+  fetchUser
 } from '../../src/sagas';
 import Actions from '../../src/actions/creators';
 import Types from '../../src/actions/types';
@@ -55,10 +55,10 @@ test('the watch login saga', t => {
 
   t.deepEqual(
     step(),
-    fork(watchFetchUser)
+    fork(fetchUser)
   );
 
-  const userStep = stepper(watchFetchUser());
+  const userStep = stepper(fetchUser());
   const mockGetUserReponse = {
     ok: true,
     data: {
