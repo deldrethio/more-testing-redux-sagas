@@ -1,5 +1,5 @@
 {
-  "name": "deldrethio-testing-redux-sagas-p2",
+  "name": "more-testing-redux-sagas",
   "version": "1.0.0",
   "description": "Further testing redux sagas.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "deldrethio-testing-redux-sagas-p2"
+    "url": "https://github.com/deldrethio/more-testing-redux-sagas.git"
   },
   "keywords": [
     "testing",

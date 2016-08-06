@@ -3,10 +3,7 @@
 	"ecmaFeatures": {
 		"blockBindings": true,
 		"modules": true,
-	},
-	"env": {
-		"mocha": true
-	},
+	}
 	"globals": {
         "describe": true,
         "xdescribe": false,

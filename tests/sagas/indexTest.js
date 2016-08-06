@@ -98,7 +98,7 @@ test('the watch login saga', t => {
     undefined
   );
 
-  // For got measure, lets see if the prefork watchLogin saga is where we expect
+  // For good measure, lets see if the prefork watchLogin saga is where we expect
   t.deepEqual(
     step(),
     take(Types.LOGIN)
