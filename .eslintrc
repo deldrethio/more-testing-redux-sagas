@@ -3,7 +3,7 @@
 	"ecmaFeatures": {
 		"blockBindings": true,
 		"modules": true,
-	}
+	},
 	"globals": {
         "describe": true,
         "xdescribe": false,

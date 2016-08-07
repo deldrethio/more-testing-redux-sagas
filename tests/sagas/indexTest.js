@@ -1,5 +1,7 @@
 import test from 'ava';
 import { take, select, put, call, fork } from 'redux-saga/effects';
+import createSagaMiddleware from 'redux-saga';
+import configureStore from 'redux-mock-store';
 
 import {
   watchLogin,
@@ -102,5 +104,33 @@ test('the watch login saga', t => {
   t.deepEqual(
     step(),
     take(Types.LOGIN)
+  );
+});
+
+
+test('mock store, watch login saga', t => {
+  const sagaMiddleware = createSagaMiddleware();
+  const store = configureStore([sagaMiddleware])();
+  sagaMiddleware.run(watchLogin);
+
+  const mockData = { username: '1234', password: '4321' };
+  const mockLogin = Api.login(mockData.username, mockData.password);
+  const mockGetUser = Api.getUser(mockLogin.data.auth_token);
+
+  const expectedActions = [
+    { type: Types.LOGIN, ...mockData },
+    { type: Types.START_NETWORK },
+    { type: Types.END_NETWORK },
+    { type: Types.LOGIN_SUCCESS, data: mockLogin.data },
+    { type: Types.START_NETWORK },
+    { type: Types.END_NETWORK },
+    { type: Types.RECEIVE_USER, data: mockGetUser.data }
+  ];
+
+  store.dispatch(Actions.login(mockData.username, mockData.password));
+
+  t.deepEqual(
+    store.getActions(),
+    expectedActions
   );
 });
