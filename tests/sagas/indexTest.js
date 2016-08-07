@@ -107,7 +107,6 @@ test('the watch login saga', t => {
   );
 });
 
-
 test('mock store, watch login saga', t => {
   const sagaMiddleware = createSagaMiddleware();
   const store = configureStore([sagaMiddleware])();
